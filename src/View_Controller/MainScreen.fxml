@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="1268.0" style="-fx-background-color: gainsboro;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.MainScreenController">
+   <children>
+      <Label layoutX="63.0" layoutY="34.0" prefHeight="44.0" prefWidth="294.0" text="Inventory Management System" textFill="#061cab">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="63.0" layoutY="99.0" prefHeight="234.0" prefWidth="544.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Label layoutX="14.0" layoutY="24.0" text="Parts">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="searchPartButton" layoutX="290.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchPartHandler" text="Search" />
+            <TextField fx:id="searchPartTextField" layoutX="362.0" layoutY="20.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="167.0" promptText="Search by Name or ID">
+               <font>
+                  <Font size="12.0" />
+               </font></TextField>
+            <TableView fx:id="partsTable" layoutX="14.0" layoutY="59.0" prefHeight="97.0" prefWidth="512.0">
+              <columns>
+                  <TableColumn fx:id="partID" prefWidth="74.0" text="Part ID" />
+                  <TableColumn fx:id="partName" prefWidth="149.0" text="Part Name" />
+                  <TableColumn fx:id="partInventoryLevel" prefWidth="123.0" text="Inventory Level" />
+                  <TableColumn fx:id="partCostCol" prefWidth="165.0" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+            <Button layoutX="320.0" layoutY="173.0" mnemonicParsing="false" onAction="#addPartHandler" text="Add" />
+            <Button layoutX="374.0" layoutY="173.0" mnemonicParsing="false" onAction="#modifyPartHandler" text="Modify" />
+            <Button layoutX="445.0" layoutY="173.0" mnemonicParsing="false" onAction="#deletePartHandler" text="Delete" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="634.0" layoutY="99.0" prefHeight="234.0" prefWidth="544.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Label layoutX="14.0" layoutY="24.0" prefHeight="0.0" prefWidth="65.0" text="Products">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="searchProductButton" layoutX="290.0" layoutY="19.0" mnemonicParsing="false" onAction="#searchProductHandler" text="Search" />
+            <TextField fx:id="searchProductTextField" layoutX="362.0" layoutY="20.0" minHeight="-Infinity" prefHeight="25.0" prefWidth="167.0" promptText="Search by Name or ID">
+               <font>
+                  <Font size="12.0" />
+               </font></TextField>
+            <TableView fx:id="productsTable" layoutX="14.0" layoutY="59.0" prefHeight="97.0" prefWidth="512.0">
+               <columns>
+                  <TableColumn fx:id="productID" prefWidth="90.0" text="Product ID" />
+                  <TableColumn fx:id="productName" prefWidth="133.0" text="Product Name" />
+                  <TableColumn fx:id="productInventoryLevel" prefWidth="123.0" text="Inventory Level" />
+                  <TableColumn fx:id="productCostCol" prefWidth="165.0" text="Price/Cost per Unit" />
+               </columns>
+            </TableView>
+            <Button layoutX="320.0" layoutY="173.0" mnemonicParsing="false" onAction="#addProductHandler" text="Add" />
+            <Button layoutX="374.0" layoutY="173.0" mnemonicParsing="false" onAction="#modifyProductHandler" text="Modify" />
+            <Button layoutX="445.0" layoutY="173.0" mnemonicParsing="false" onAction="#deleteProductHandler" text="Delete" />
+         </children>
+      </AnchorPane>
+      <Button layoutX="1083.0" layoutY="362.0" mnemonicParsing="false" onAction="#exitHandler" text="Exit" />
+   </children>
+</AnchorPane>
